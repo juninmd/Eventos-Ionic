@@ -38,26 +38,32 @@
 
 
   <ion-list>
+    <ion-list-header center text-center>
+      Timeline
+    </ion-list-header>
     <ion-item *ngFor="let item of detalhes">
-
-
-      <ion-thumbnail item-left *ngIf="item.TIPOMIDIA == 4">
-        <img style="width:120px" src="{{'assets/d'+item.IDDETALHE+'.jpg'}}">
-      </ion-thumbnail>
-
-      <ion-row>
-        <h2>{{item.NOME}} </h2>
-
-      </ion-row>
 
       <p>{{item.DESCRICAO}}</p>
       <ion-note class="anotacao" item-right>
         {{item.DATA | date: 'HH:mm'}}
       </ion-note>
+
+      <ion-thumbnail item-left *ngIf="item.TIPOMIDIA == 4">
+        <img style="width:120px" src="{{'assets/d'+item.IDDETALHE+'.jpg'}}">
+      </ion-thumbnail>
+
+      <ion-thumbnail item-left *ngIf="item.TIPOMIDIA == 3">
+        <iframe width="120" height="120" src="https://www.youtube.com/embed/j-0fNmqFEeo" frameborder="0" allowfullscreen></iframe>
+      </ion-thumbnail>
+
+
+
     </ion-item>
 
     <ion-item *ngIf="detalhes?.length == 0">
       <ion-note> Nenhum detalhe cadastrado </ion-note>
     </ion-item>
+
+
   </ion-list>
 </ion-content>
