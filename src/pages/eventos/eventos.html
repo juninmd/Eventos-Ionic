@@ -8,5 +8,25 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of eventos">
 
+      <ion-row>
+        <h2>{{item.NOME}} </h2>
+        <ion-note class="anotacao">
+          {{item.DATA | date: 'dd/MM/yy HH:mm'}}
+        </ion-note>
+      </ion-row>
+
+      <p>{{item.DESCRICAO}}</p>
+      <button ion-button clear icon-only item-right>
+        
+        <ion-icon name="arrow-round-forward"></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item *ngIf="eventos?.length == 0">
+      <ion-note> Nenhum evento cadastrado </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
