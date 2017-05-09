@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let item of eventos">
+    <ion-item *ngFor="let item of eventos" (click)="open(item)">
 
       <ion-row>
         <h2>{{item.NOME}} </h2>

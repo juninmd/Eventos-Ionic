@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { Eventos } from '../pages/eventos/eventos';
+import { DetalheEvento } from '../pages/detalhe-evento/detalhe-evento';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +30,8 @@ export function httpFactory(backend: XHRBackend, options: RequestOptions, loader
     MyApp,
     HomePage,
     ListPage,
-    Eventos
+    Eventos,
+    DetalheEvento
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ export function httpFactory(backend: XHRBackend, options: RequestOptions, loader
     MyApp,
     HomePage,
     ListPage,
-    Eventos
+    Eventos,
+    DetalheEvento
   ],
   providers: [
     LoaderService,

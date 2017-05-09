@@ -16,7 +16,7 @@ export class DetalheEventoService {
     };
 
     public getById(ID: number) {
-        return this.http.get(`${this.webconfig.UrlCore}eventos/detalhe/:ID`, null).map(r => r.json())
+        return this.http.get(`${this.webconfig.UrlCore}eventos/detalhe/${ID}`, null).map(r => r.json())
     };
 
     public insert(body: any) {
@@ -28,7 +28,7 @@ export class DetalheEventoService {
     };
 
     public delete(ID: number) {
-        return this.http.get(`${this.webconfig.UrlCore}eventos/detalhe`, null).map(r => r.json())
+        return this.http.get(`${this.webconfig.UrlCore}eventos/detalhe/${ID}`, null).map(r => r.json())
     };
 
 }
