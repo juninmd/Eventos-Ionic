@@ -3,16 +3,10 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+      interval: "daily"
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "*"
+        versions: ["3001.0001.0000-dev-harmony-fb"]
+      - dependency-name: "esprima-fb"
+        versions: ["~3001.0001.0000-dev-harmony-fb"]
