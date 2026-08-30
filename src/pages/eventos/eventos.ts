@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { EventoService } from '../../services/eventos.service';
-
+import { Event } from '../../models/event.model';
 import { DetalheEvento } from '../detalhe-evento/detalhe-evento';
 
 
@@ -11,7 +11,7 @@ import { DetalheEvento } from '../detalhe-evento/detalhe-evento';
 })
 export class Eventos {
 
-  eventos: [any];
+  eventos: Event[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private eventoService: EventoService) {
   }
 
@@ -19,7 +19,7 @@ export class Eventos {
     this.eventoService.getAll().subscribe(q => this.eventos = q);
   }
 
-  open(evento: any) {
+  open(evento: Event) {
     this.navCtrl.push(DetalheEvento, { IDEVENTO: evento.IDEVENTO })
   }
 
